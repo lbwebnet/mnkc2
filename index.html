@@ -1,9 +1,13 @@
 <html>
+
+
+
+
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>LF30.lv</title>
+	<title>MNKC-1</title>
 </head>
 
 
@@ -503,9 +507,41 @@
       </div>
                 <button class="balsot" id="my-form-button">Balsot</button>
                 <p id="my-form-status"></p></form>
-				
-				
-				<style>
+
+<script>
+      var form = document.getElementById("my-form");
+      async function handleSubmit(event) {
+       event.preventDefault();
+         var status = document.getElementById("my-form-status");
+          var data = new FormData(event.target);
+         fetch(event.target.action, {
+      method: form.method,
+                        body: data,
+                        headers: {'Accept': 'application/json'}}).then(response => {
+                        if (response.ok) {status.innerHTML = "<span style='color: #526a37;font-size:16pt;'>Balsojums veiksmīgi reģistrēts!</span>";
+                            form.reset()}}).catch(error => {
+                        status.innerHTML = "Oops! There was a problem submitting your form"});}
+                form.addEventListener("submit", handleSubmit)
+            </script>
+
+      
+      
+     
+  
+
+     
+    </div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+
+</script> 
+  </div>
+</div>
+ <style>
 		html { height:100%; } 
 		body { margin:0; padding:0;width:100%;height:100%;min-height:100%;overflow:hidden; 
   font-family: Arial;
@@ -716,42 +752,12 @@ p{font-size: 8px;}
 }
 .checkbox{
   color:white;
-}</style>
-				
-
-<script>
-      var form = document.getElementById("my-form");
-      async function handleSubmit(event) {
-       event.preventDefault();
-         var status = document.getElementById("my-form-status");
-          var data = new FormData(event.target);
-         fetch(event.target.action, {
-      method: form.method,
-                        body: data,
-                        headers: {'Accept': 'application/json'}}).then(response => {
-                        if (response.ok) {status.innerHTML = "<span style='color: #526a37;font-size:16pt;'>Balsojums veiksmīgi reģistrēts!</span>";
-                            form.reset()}}).catch(error => {
-                        status.innerHTML = "Oops! There was a problem submitting your form"});}
-                form.addEventListener("submit", handleSubmit)
-            </script>
+}
+</style>
+</body>
+</html>
 
       
       
      
   
-
-     
-    </div>
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-
-</script> 
-  </div>
-</div>
-
-</body>
-</html>
